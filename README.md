@@ -1,3 +1,7 @@
+# Example Simple blog
+
+Code under this repository is from the yt tutorial and can be found [here](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
