@@ -2,6 +2,12 @@
 
 Code under this repository is from the yt tutorial and can be found [here](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d).
 
+## json-server
+
+This project is using the json-server and it's need to be running in the background.
+Run this command:
+`npx json-server --watch data/db.json --port 8000`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
