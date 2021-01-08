@@ -3,7 +3,7 @@ import BlogList from './BlogList';
 
 const Home = () => {
 
-    const [blogs, setBlogs] = useState([]);
+    const [blogs, setBlogs] = useState(null);
 
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(e => e.id !== id);
@@ -23,7 +23,7 @@ const Home = () => {
 
     return (
         <div className="home">
-            <BlogList blogs={blogs} title="All blogs!" handleDelete={handleDelete} />
+            { blogs && <BlogList blogs={blogs} title="All blogs!" handleDelete={handleDelete} />}
         </div>
     );
 }
