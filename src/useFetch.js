@@ -7,8 +7,10 @@ const useFetch = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const abort = new AbortController();
+
     setTimeout(() => {
-      fetch(url)
+      fetch(url, { signal: abort.signal })
         .then((res) => {
           if (!res.ok) {
             throw Error("Could not fetch the data for that resource");
@@ -25,6 +27,8 @@ const useFetch = (url) => {
           setIsPending(false);
         });
     }, 1000);
+
+    return () => abort.abort();
   }, [url]); // url means that whenever the 'url' changes it's going to rerun this function 'useEffect'
 
   return { data, isPending, error }; // we could also return the array. Passing the object means that
