@@ -23,11 +23,17 @@ const useFetch = (url) => {
           setError(null);
         })
         .catch((err) => {
-          setError(err.message);
-          setIsPending(false);
+          if (err.name === "AbortError") {
+            console.log("fetch aborted");
+          } else {
+            setError(err.message);
+            setIsPending(false);
+          }
         });
     }, 1000);
 
+    // this is a cleanup function. This funciton will be called by the component that is using
+    // our custom hook useFetch when it will be unmounted.
     return () => abort.abort();
   }, [url]); // url means that whenever the 'url' changes it's going to rerun this function 'useEffect'
 
