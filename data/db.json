@@ -2,7 +2,7 @@
   "blogs": [
     {
       "title": "My First Blog",
-      "body": "Some nice text\nAnd even more nice text to read",
+      "body": "Some nice text.\nAnd even more nice text to read",
       "author": "mario",
       "id": 1
     },
